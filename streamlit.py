@@ -6,7 +6,7 @@ import pandas as pd
 
 # --- Load Model and Vectorizer with Version Check ---
 try:
-    with open('Random Forest Hate Spech Classification', 'rb') as f:
+    with open('Random Forest Hate Spech Classification.pkl', 'rb') as f:
         clf = pickle.load(f)
 except ValueError as e:
     if "incompatible dtype" in str(e):
@@ -15,7 +15,7 @@ except ValueError as e:
         st.error(f"Error loading the model: {e}")
     st.stop()  # Stop execution if there's an error
 
-with open('RandomForest_vectorizer', 'rb') as f:
+with open('RandomForest_vectorizer.pkl', 'rb') as f:
     _, vectorizer = pickle.load(f)
 
 # --- Helper Function ---
